@@ -1,0 +1,26 @@
+name: first file work flow
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  hello:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: hello world
+        run: echo "First File Messaging"
+        shell: bash
+
+  goodbye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: goodbye firstfile
+        run: echo "Goodbye FirstFile"
+        shell: bash
